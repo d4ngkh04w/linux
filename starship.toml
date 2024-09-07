@@ -1,0 +1,74 @@
+format = """ $username$directory$git_branch$git_commit$time$cmd_duration
+[ ❯❯ ](bold #ea00d9)
+"""
+# 
+[aws]
+symbol = "  "
+
+[directory]
+read_only = " "
+truncation_length = 0
+style = "bold #FF4191"
+format = " in [ $path]($style)[$lock_symbol]($lock_style) "
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style) '
+style = "blue bold"
+trim_at = "."
+disabled = false
+
+[username]
+style_user = "bold #36adce"
+style_root = "red bold"
+# format = "[$user]($style) "
+format = "[ DangKhoa]($style)"
+disabled = false
+show_always = true
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+style = 'bold #FF8343'
+symbol = ' '
+format = 'on [  $symbol$branch]($style) '
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[time]
+disabled = false
+style = "bold #16FF00"
+format = 'at [ $time]($style) '
+time_format = '%A | %I:%M %p'
+use_12hr = true
+
+[java]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+disabled = false
+threshold = 50
+format = "usage [$symbol$ram]($style) "
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 0
+format = 'took [ $duration](bold #F7EC09)'
+
+[nim]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+

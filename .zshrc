@@ -1,30 +1,54 @@
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin:/bin:/usr/local/games:/usr/games
-
+export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# ZSH_THEME="comfyline"
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
-zstyle ':omz:update' mode auto
-zstyle ':omz:update' frequency 7
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-DISABLE_AUTO_TITLE="true"
+# Uncomment the following line to change how often to auto-update (in days).
+zstyle ':omz:update' frequency 13
 
-ENABLE_CORRECTION="true"
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-COMPLETION_WAITING_DOTS="true"
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use fzf)
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# ZSH_CUSTOM=/path/to/new-custom-folder
+plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting fzf you-should-use command-not-found nmap)
 
 source $ZSH/oh-my-zsh.sh
 
-export MANPATH="/usr/local/man:$MANPATH"
-
-alias update="sudo apt update"
-alias upgrade="sudo apt full-upgrade -y"
+# export MANPATH="/usr/local/man:$MANPATH"
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+alias updt="sudo apt update"
+alias upgrd="sudo apt full-upgrade -y"
 alias bat="batcat"
 alias cat="bat"
 alias reload-zsh="source ~/.zshrc"
@@ -32,16 +56,23 @@ alias ls="eza --color=always --long --git --icons=always --no-time"
 alias cd="z"
 alias fd="fdfind"
 alias autoremove="sudo apt autoremove -y"
+alias cls="clear"
+alias nuclei="nuclei.exe"
+alias nmap="nmap.exe"
+alias gobuster="gobuster.exe"
+alias dirsearch="dirsearch.exe"
+alias arjun="arjun.exe"
+alias sqlmap="sqlmap.exe"
+alias subfinder="subfinder.exe"
+alias httpx="httpx-go.exe"
+alias gau="gau.exe"
+alias exiftool="exiftool.exe"
+alias social-analyzer="python.exe -m social-analyzer"
+alias sherlock="sherlock.exe"
+alias maigret="maigret.exe"
 
-# Bat theme
-export BAT_THEME=tokyonight_night
-
-# The fuck alias
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
-
-# Zoxide (cd)
 eval "$(zoxide init zsh)"
+export BAT_THEME=tokyonight_night
 
 # fzf
 export FZF_DEFAULT_OPTS="
@@ -80,11 +111,7 @@ _fzf_comprun() {
   esac
 }
 
-
-# zsh syntax highlighting
-# tokyonight
 source ~/.oh-my-zsh/custom/themes/zsh-syntax-highlighting.zsh
 
-# startship
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"                                       

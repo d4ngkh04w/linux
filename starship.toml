@@ -1,9 +1,12 @@
-format = """ $username$directory$git_branch$git_commit$time$cmd_duration
-[ ❯❯ ](bold #ea00d9)
+format = """$username$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$time\
+$cmd_duration\
+$character
+[❯❯ ](bold #ea00d9)
 """
-# 
-[aws]
-symbol = "  "
 
 [directory]
 read_only = " "
@@ -13,21 +16,17 @@ format = " in [ $path]($style)[$lock_symbol]($lock_style) "
 
 [hostname]
 ssh_only = false
-format = '[$hostname]($style) '
-style = "blue bold"
+format = '[@$hostname]($style)'
+style = "bold #36adce"
 trim_at = "."
 disabled = false
 
 [username]
 style_user = "bold #36adce"
 style_root = "red bold"
-# format = "[$user]($style) "
-format = "[ DangKhoa]($style)"
+format = "[ $user]($style)"
 disabled = false
 show_always = true
-
-[docker_context]
-symbol = " "
 
 [git_branch]
 style = 'bold #FF8343'
@@ -48,9 +47,6 @@ format = 'at [ $time]($style) '
 time_format = '%A | %I:%M %p'
 use_12hr = true
 
-[java]
-symbol = " "
-
 [memory_usage]
 symbol = " "
 disabled = false
@@ -62,13 +58,6 @@ style = "bold yellow"
 min_time = 0
 format = 'took [ $duration](bold #F7EC09)'
 
-[nim]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-
+[character]
+success_symbol = '[  ](bold green)'
+error_symbol = '[  ](#E84D44) '

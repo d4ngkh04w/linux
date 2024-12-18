@@ -1,6 +1,5 @@
 call plug#begin()
 
-" List your plugins here
 Plug 'tpope/vim-sensible'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
@@ -56,7 +55,6 @@ set cursorline
 set showmode
 set tabstop=4
 set shiftwidth=4
-" set autoindent
 set encoding=UTF-8
 set smartindent
 set clipboard=unnamedplus
@@ -67,7 +65,6 @@ syntax on
 filetype plugin indent on
 
 nnoremap <F2> :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 inoremap <C-n> <Esc>:NERDTreeToggle<CR>
 
@@ -77,6 +74,7 @@ inoremap <C-s> <C-o>:w<CR>
 
 " Ctrl + Q to quit
 noremap <C-q> :q<CR>
+inoremap <C-q> <C-o>:q<CR>
 
 " Ctrl + W to close
 nnoremap <C-w> :wq<CR>
@@ -101,12 +99,17 @@ inoremap <C-v> <C-o>"+p
 
 " Ctrl + T to open terminal
 nnoremap <C-t> :terminal<CR>
+inoremap <C-t> <C-o>:terminal<CR>
+
+" Ctrl + F to search word
+nnoremap <C-f> :%s//g<Left><Left>
+inoremap <C-f> <C-o>:%s//g<Left><Left>
 
 " F5 to refresh VIM
 nnoremap <F5> :source $MYVIMRC<CR>
 inoremap <F5> <C-o>:source $MYVIMRC<CR>
+
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-

@@ -75,6 +75,7 @@ eval "$(zoxide init zsh)"
 export BAT_THEME=tokyonight_night
 
 # fzf
+source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="
 --color=fg:#908caa,bg:#232136,hl:#fcff54
 --color=fg+:#e0def4,bg+:#393552,hl+:#fcff54
